@@ -20,29 +20,62 @@
 
 ;;; Code:
 
-;; Search based syntax highlighting
+;;; Search based syntax highlighting
 
 (defvar aiken-keywords
-  '("let" "expect" "as" "use" "type" "validator"))
+  '("if"
+    "else"
+    "when"
+    "is"
+    "fn"
+    "use"
+    "let"
+    "pub"
+    "type"
+    "opaque"
+    "const"
+    "todo"
+    "expect"
+    "test"
+    "trace"
+    "fail"
+    "validator"
+    "and"
+    "or"))
 
 (defvar aiken-font-lock-keywords
-  `((
+  (append
+   `(
      ;; Keywords
      (,(regexp-opt aiken-keywords 'words) . font-lock-keyword-face)
+     ;; CamelCase is a type
+     ("[[:upper:]][[:word:]]*" . font-lock-type-face)
      ;; Question mark operator
-     ("\\?" . font-lock-builtin-face))))
+     (,"\\?" . font-lock-builtin-face))
+   ;; Identifiers after keywords
+   (mapcar #'(lambda (x)
+               (list (concat (car x) "[^(]\\(\\w*\\)")
+                     1 ;; apply face ot first match group
+                     (cdr x)))
+           '(("const" . font-lock-type-face)
+             ("type" . font-lock-type-face)
+             ("use" . font-lock-constant-face)
+             ("fn" . font-lock-function-name-face)))))
 
 ;;; Mode definitions
 
 ;;;###autoload
 (define-derived-mode aiken-mode prog-mode "Aiken"
   "Major mode for Aiken code."
+  :group 'aiken-mode
 
-  ;;; Configure Emacs settings
   (setq-local indent-tabs-mode nil)
 
   ;; Syntax highlighting via font-lock
-  (setq font-lock-defaults aiken-font-lock-keywords)
+  (setq-local font-lock-defaults '(aiken-font-lock-keywords))
+
+  ;; Syntax: make _ part of words
+  (modify-syntax-entry ?_ "w" aiken-mode-syntax-table)
 
   ;; Comment syntax
   (modify-syntax-entry ?/ ". 124b" aiken-mode-syntax-table)

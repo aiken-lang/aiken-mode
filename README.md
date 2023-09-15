@@ -17,14 +17,20 @@ Add this to your `packages.el`:
   :recipe (:host github :repo "aiken-lang/aiken-mode"))
 ```
 
-Or for faster feedback time during development:
+Add this to your `config.el`:
+
+``` elisp
+(use-package! aiken-mode)
+```
+
+and run `doom sync`.
+
+For faster feedback time during development:
 
 ```elisp
 (package! aiken-mode
   :recipe (:local-repo "~/code/aiken-mode"))
 ```
-
-And run `doom sync`.
 
 ### use-package
 
