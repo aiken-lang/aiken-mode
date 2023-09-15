@@ -35,6 +35,7 @@
     "opaque"
     "const"
     "todo"
+    "error"
     "expect"
     "test"
     "trace"
@@ -43,15 +44,37 @@
     "and"
     "or"))
 
+(defvar aiken-operators
+  '(
+    "="
+    "->"
+    ".."
+    "|>"
+    ">="
+    "<="
+    ">"
+    "<"
+    "!="
+    "=="
+    "&&"
+    "||"
+    "!"
+    "+"
+    "-"
+    "/"
+    "*"
+    "%"
+    "?"))
+
 (defvar aiken-font-lock-keywords
   (append
    `(
      ;; Keywords
-     (,(regexp-opt aiken-keywords 'words) . font-lock-keyword-face)
+     (,(regexp-opt aiken-keywords 'symbols) . font-lock-keyword-face)
      ;; CamelCase is a type
      ("[[:upper:]][[:word:]]*" . font-lock-type-face)
-     ;; Question mark operator
-     (,"\\?" . font-lock-builtin-face))
+     ;; Operators
+     (,(regexp-opt aiken-operators nil) . font-lock-builtin-face))
    ;; Identifiers after keywords
    (mapcar #'(lambda (x)
                (list (concat (car x) "[^(]\\(\\w*\\)")
