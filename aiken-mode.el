@@ -1,10 +1,11 @@
 ;;; aiken-mode.el --- Major mode for Aiken -*- lexical-binding: t -*-
 
 ;; Copyright © 2023 Sebastian Nagel <sebastian.nagel@ncoding.at>
-;;
-;; URL: https://github.com/aiken-lang/aiken-mode
+
+;; Author: Sebastian Nagel <sebastian.nagel@ncoding.at>
+;; URL: https://github.com/ch1bo/aiken-mode
 ;; Keywords: languages aiken
-;; Version: 0.1.0
+;; Version: 1.0.0
 ;; Package-Requires: ((emacs "26.1"))
 
 ;; This file is NOT part of GNU Emacs.
@@ -15,12 +16,11 @@
 
 ;;; Commentary:
 
-;; Provides syntax highlighting, indentation, and code navigation
-;; features for the Aiken smart contract language.
+;; Provides syntax highlighting for the Aiken smart contract language.
 
 ;;; Code:
 
-;;; Search based syntax highlighting
+;; Aiken syntax
 
 (defvar aiken-keywords
   '("if"
@@ -85,7 +85,7 @@
              ("use" . font-lock-constant-face)
              ("fn" . font-lock-function-name-face)))))
 
-;;; Mode definitions
+;; Mode definitions
 
 ;;;###autoload
 (define-derived-mode aiken-mode prog-mode "Aiken"
