@@ -3,6 +3,13 @@
 An emacs major mode providing syntax highlighting, indentation and formatting
 commands for the Aiken smart contract language.
 
+## Features
+
+- [x] Syntax highlighting
+- [ ] `aiken fmt` command and on-save
+- [ ] Indentation
+- [ ] Aiken LSP client
+
 ## Installation
 
 The package is not yet on MELPA, so pointing your emacs config to this
@@ -29,7 +36,7 @@ For faster feedback time during development:
 
 ```elisp
 (package! aiken-mode
-  :recipe (:local-repo "~/code/aiken-mode"))
+  :recipe (:local-repo "~/path/to/aiken-mode"))
 ```
 
 ### use-package
