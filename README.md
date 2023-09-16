@@ -12,7 +12,7 @@ commands for the Aiken smart contract language.
 
 ## Installation
 
-The package is not yet on MELPA, so pointing your emacs config to this
+The package is [not yet on MELPA](https://github.com/melpa/melpa/pull/8736), so pointing your emacs config to this
 repository is the way to go for now.
 
 ### [doom-emacs](https://github.com/doomemacs/doomemacs/) (recommended :smiling_imp:)
