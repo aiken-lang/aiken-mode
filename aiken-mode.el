@@ -76,10 +76,10 @@
      ;; Operators
      (,(regexp-opt aiken-operators nil) . font-lock-builtin-face))
    ;; Identifiers after keywords
-   (mapcar #'(lambda (x)
-               (list (concat (car x) "[^(]\\(\\w*\\)")
-                     1 ;; apply face ot first match group
-                     (cdr x)))
+   (mapcar (lambda (x)
+             (list (concat (car x) "[^(]\\(\\w*\\)")
+                   1 ;; apply face ot first match group
+                   (cdr x)))
            '(("const" . font-lock-type-face)
              ("type" . font-lock-type-face)
              ("use" . font-lock-constant-face)
@@ -113,7 +113,7 @@
   (setq-local comment-auto-fill-only-comments t))
 
 ;;;###autoload
-(add-to-list 'auto-mode-alist '("\\.ak" . aiken-mode))
+(add-to-list 'auto-mode-alist '("\\.ak\\" . aiken-mode))
 
 (provide 'aiken-mode)
 ;;; aiken-mode.el ends here
