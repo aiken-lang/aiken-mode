@@ -7,6 +7,7 @@
 ;; Keywords: languages aiken
 ;; Version: 1.0.0
 ;; Package-Requires: ((emacs "26.1"))
+;; SPDX-License-Identifier: MPL-2.0
 
 ;; This file is NOT part of GNU Emacs.
 
