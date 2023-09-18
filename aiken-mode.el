@@ -5,7 +5,7 @@
 ;; Author: Sebastian Nagel <sebastian.nagel@ncoding.at>
 ;; URL: https://github.com/ch1bo/aiken-mode
 ;; Keywords: languages aiken
-;; Version: 1.0.0
+;; Version: 1.0.1
 ;; Package-Requires: ((emacs "26.1"))
 ;; SPDX-License-Identifier: MPL-2.0
 
