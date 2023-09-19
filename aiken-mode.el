@@ -5,7 +5,7 @@
 ;; Author: Sebastian Nagel <sebastian.nagel@ncoding.at>
 ;; URL: https://github.com/ch1bo/aiken-mode
 ;; Keywords: languages aiken
-;; Version: 1.0.1
+;; Version: 1.0.2
 ;; Package-Requires: ((emacs "26.1"))
 ;; SPDX-License-Identifier: MPL-2.0
 
@@ -114,7 +114,7 @@
   (setq-local comment-auto-fill-only-comments t))
 
 ;;;###autoload
-(add-to-list 'auto-mode-alist '("\\.ak\\" . aiken-mode))
+(add-to-list 'auto-mode-alist '("\\.ak\\'" . aiken-mode))
 
 (provide 'aiken-mode)
 ;;; aiken-mode.el ends here
