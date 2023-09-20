@@ -22,5 +22,5 @@ jobs:
       env:
         LOCAL_REPO: ${{ github.workspace }}
         # RECIPE is your recipe as written for MELPA:
-        RECIPE: (aiken-mode :repo "ch1bo/aiken-mode" :fetcher github)
+        RECIPE: (aiken-mode :repo "aiken-lang/aiken-mode" :fetcher github)
       run: echo $GITHUB_REF && make -C ~/melpazoid

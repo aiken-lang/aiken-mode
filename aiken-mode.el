@@ -3,7 +3,7 @@
 ;; Copyright © 2023 Sebastian Nagel <sebastian.nagel@ncoding.at>
 
 ;; Author: Sebastian Nagel <sebastian.nagel@ncoding.at>
-;; URL: https://github.com/ch1bo/aiken-mode
+;; URL: https://github.com/aiken-lang/aiken-mode
 ;; Keywords: languages aiken
 ;; Version: 1.0.2
 ;; Package-Requires: ((emacs "26.1"))
